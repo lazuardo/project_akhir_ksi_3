@@ -41,15 +41,15 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4"> Selamat Datang</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="POST" action="action_login.php">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="text" class="form-control form-control-user"
+                                                name="username" id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Masukkan Username..." required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                name="password" id="exampleInputPassword" placeholder="Masukkan Password..." required>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -58,9 +58,8 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="dashboard.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button type="submit" class="btn btn-primary" style="margin-right:10px">Login</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

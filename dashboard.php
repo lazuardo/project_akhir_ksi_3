@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == false) {
+    header("Location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Project Akhir KSI 3</title>
+    <title>Project KSI 3</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,56 +34,42 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <?php
          require('sidebar.php');
          require('topbar.php');
         ?>
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Input Data Satuan</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Halaman Utama</h1>
                     </div>
+                            <!-- Approach -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Minimarket Mantap Mantap</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>Selamat Datang Di Halaman Utama Minimarket Mantap Mantap</p>
+                                    <p class="mb-0">Anda Puas kami Lemas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
                 <!-- /.container-fluid -->
-                <?php
-   
-    include_once("database/connection.php");
-?>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="container">
-                <form action="action_data_satuan.php" method="POST" id="form_satuan" class="form_data_satuan">
-
-                    <div class="form-group">
-                        <label for="nama_satuan">Nama Satuan</label>
-                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Contoh : Pcs, Kilogram  " required>
-                        </div>
-                        <div class="footer">
-                        <a href="tampil_satuan.php" class="btn btn-primary float-right" >view data Satuan</a>
-                        <button type="submit" form="form_satuan" value="Submit" class="btn btn-primary float-right" style="margin-right:10px">Submit</button>
-                    </div>
-                </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
 
             </div>
             <!-- End of Main Content -->
 
-             <!-- Footer -->
-             <footer class="sticky-footer bg-white">
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Minimarket Mantap Mantap 2021</span>
+                        <span>Copyright &copy; Minimarket Mantap Mantap KSI 3</span>
                     </div>
                 </div>
             </footer>
