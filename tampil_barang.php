@@ -3,28 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Project Akhir KSI 3</title>
-    <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
+        <?php
+         require('header/head.php');
+        ?>
 
 <body id="page-top">
 
@@ -54,6 +35,7 @@
                                 
                                 <th>Kategori</th>
                                 <th>Satuan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <?php
@@ -61,7 +43,8 @@
                             $data_barang = mysqli_query($connect, "SELECT * FROM barang JOIN kategori 
                             ON barang.id_kategori=kategori.id_kategori
                             JOIN satuan ON barang.id_satuan=satuan.id_satuan");
-                            while ($d = mysqli_fetch_assoc($data_barang)) {
+                            
+                            while ($d = mysqli_fetch_array($data_barang)) {
                         ?>
                         <tbody>
                             <tr>
@@ -69,6 +52,7 @@
                             <td><?php echo $d['nama_barang']; ?></td>
                             <td><?php echo $d['nama_kategori']; ?></td>
                             <td><?php echo $d['nama_satuan']; ?></td>
+                            <td><a href="http://localhost:8080/10117130-KSI-3/action_hapus_data_barang.php?id=<?= $d['id_barang'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
                             </tr>
                         </tbody>
                         <?php }; ?>
@@ -124,22 +108,9 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <?php
+        require ('footer/footer_script.php'); 
+    ?>
 
 </body>
 
